@@ -37,21 +37,24 @@ class Film {
 
 class FilmList {
     constructor() {
-        
+        this.films = [];
     }
 
-    addFilm (film){
+    addFilm(film) {
+        this.films.push(film);
+    }
 
-    };
-    
-
-    removeFilm (filmId) {
-        
+    removeFilm(id) {
+        this.films = this.films.filter(film => film.id !== id);
     }
 
     showList() {
-        
+        this.films.forEach(film => {
+            console.log(` ${film.title} (${film.release_date}) - Popularidad: ${film.popularity}`);
+        });
     }
+}
+
 
     addMultipleFilms = (...films) => {
 
