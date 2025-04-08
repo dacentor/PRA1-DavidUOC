@@ -47,7 +47,7 @@ class FilmList {
     removeFilm(id) {
         this.films = this.films.filter(film => film.id !== id);
     }
-
+ 
     showList() {
         this.films.forEach(film => {
             console.log(` ${film.title} (${film.release_date}) - Popularidad: ${film.popularity}`);
@@ -55,19 +55,24 @@ class FilmList {
     }
 }
 
-
-    addMultipleFilms = (...films) => {
-
-    }
+addMultipleFilms = (...films) => {
+    this.films.push(...films);
+};
     
 
-    getFilmsByDateRange = (startDate, endDate) => {
+getFilmsByDateRange = (startDate, endDate) => {
+     const start = new Date(startDate);
+     const end = new Date(endDate);
+     return this.films.filter(film => {
+        const filmDate = new Date(film.release_date);
+        return filmDate >= start && filmDate <= end;
+    });
+};
 
-    }
-
-    sortFilmsByPopularity = () => {
-
-    }
+sortFilmsByPopularity = () => {
+    this.films.sort((a, b) => b.popularity - a.popularity);
+};
+}
     
     findFilmById() {
         //Función recursiva
