@@ -10,7 +10,6 @@ class Film {
         this._vote_count = vote_count;
         this._genre_ids = genre_ids;
     }
-
     // Getters
     get id() { return this._id; }
     get title() { return this._title; }
@@ -33,8 +32,6 @@ class Film {
     set vote_count(value) { this._vote_count = value; }
     set genre_ids(value) { this._genre_ids = value; }
 }
-
-
 class FilmList {
     constructor() {
         this.films = [];
@@ -57,8 +54,7 @@ class FilmList {
 
 addMultipleFilms = (...films) => {
     this.films.push(...films);
-};
-    
+};  
 
 getFilmsByDateRange = (startDate, endDate) => {
      const start = new Date(startDate);
@@ -72,7 +68,6 @@ getFilmsByDateRange = (startDate, endDate) => {
 sortFilmsByPopularity = () => {
     this.films.sort((a, b) => b.popularity - a.popularity);
 };
-
     
 findFilmById = (id, index = 0) => {
     if (index >= this.films.length) return null;
@@ -103,8 +98,9 @@ findFilmById = (id, index = 0) => {
     
     };
 
-    getPopularFilmTitles() {
+    getPopularFilmTitles = (minVoteAverage) => {
         //Uso de map y filter
-    }
-
-
+        return this.films
+            .filter(film=> film.vote_average >= minVoteAverage)
+            .map (film => film.title);
+    };
