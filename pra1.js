@@ -79,10 +79,29 @@ findFilmById = (id, index = 0) => {
     if (this.films[index].id === id) return this.films[index];
     return this.findFilmById(id, index + 1);
 };
+
     
-    getMostCommonGenre() {
-        //Uso de reduce
-    }
+    getMostCommonGenre() => {
+        const genreCount = this.films.reduce((acc, film) => {
+            film.genre_ids.forEach(genreId => {
+                acc[genreId] =(acc[genreId] || 0) +1;
+            });
+            return acc;
+
+        },{});
+
+        let mostCommon = null;
+        let maxCount = 0;
+
+        for (const genreId in genreCount) {
+            if (genreCount[genreId] > maxCount) {
+                mostCommon =genreId;
+                maxcCount = genreCount[genreId];
+            }
+        }
+        return parseInt (mostcommon); 
+    
+    };
 
     getPopularFilmTitles() {
         //Uso de map y filter
