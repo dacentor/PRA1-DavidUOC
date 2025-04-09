@@ -72,11 +72,13 @@ getFilmsByDateRange = (startDate, endDate) => {
 sortFilmsByPopularity = () => {
     this.films.sort((a, b) => b.popularity - a.popularity);
 };
-}
+
     
-    findFilmById() {
-        //Función recursiva
-    }
+findFilmById = (id, index = 0) => {
+    if (index >= this.films.length) return null;
+    if (this.films[index].id === id) return this.films[index];
+    return this.findFilmById(id, index + 1);
+};
     
     getMostCommonGenre() {
         //Uso de reduce
@@ -85,5 +87,5 @@ sortFilmsByPopularity = () => {
     getPopularFilmTitles() {
         //Uso de map y filter
     }
-}
+
 
