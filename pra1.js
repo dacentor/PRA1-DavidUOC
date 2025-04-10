@@ -44,7 +44,7 @@ class FilmList {
     removeFilm(id) {
         this.films = this.films.filter(film => film.id !== id);
     }
- 
+
     showList() {
         this.films.forEach(film => {
             console.log(` ${film.title} (${film.release_date}) - Popularidad: ${film.popularity}`);
@@ -54,12 +54,12 @@ class FilmList {
 
 addMultipleFilms = (...films) => {
     this.films.push(...films);
-};  
+};
 
 getFilmsByDateRange = (startDate, endDate) => {
-     const start = new Date(startDate);
-     const end = new Date(endDate);
-     return this.films.filter(film => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    return this.films.filter(film => {
         const filmDate = new Date(film.release_date);
         return filmDate >= start && filmDate <= end;
     });
@@ -68,39 +68,39 @@ getFilmsByDateRange = (startDate, endDate) => {
 sortFilmsByPopularity = () => {
     this.films.sort((a, b) => b.popularity - a.popularity);
 };
-    
+
 findFilmById = (id, index = 0) => {
     if (index >= this.films.length) return null;
     if (this.films[index].id === id) return this.films[index];
     return this.findFilmById(id, index + 1);
 };
 
-    
-    getMostCommonGenre() => {
-        const genreCount = this.films.reduce((acc, film) => {
-            film.genre_ids.forEach(genreId => {
-                acc[genreId] =(acc[genreId] || 0) +1;
-            });
-            return acc;
 
-        },{});
+getMostCommonGenre = () => {
+    const genreCount = this.films.reduce((acc, film) => {
+        film.genre_ids.forEach(genreId => {
+            acc[genreId] = (acc[genreId] || 0) + 1;
+        });
+        return acc;
 
-        let mostCommon = null;
-        let maxCount = 0;
+    });
 
-        for (const genreId in genreCount) {
-            if (genreCount[genreId] > maxCount) {
-                mostCommon =genreId;
-                maxcCount = genreCount[genreId];
-            }
+    let mostCommon = null;
+    let maxCount = 0;
+
+    for (const genreId in genreCount) {
+        if (genreCount[genreId] > maxCount) {
+            mostCommon = genreId;
+            maxcCount = genreCount[genreId];
         }
-        return parseInt (mostcommon); 
-    
-    };
+    }
+    return parseInt(mostcommon);
 
-    getPopularFilmTitles = (minVoteAverage) => {
-        //Uso de map y filter
-        return this.films
-            .filter(film=> film.vote_average >= minVoteAverage)
-            .map (film => film.title);
-    };
+};
+
+getPopularFilmTitles = (minVoteAverage) => {
+    //Uso de map y filter
+    return this.films
+        .filter(film => film.vote_average >= minVoteAverage)
+        .map(film => film.title);
+};
