@@ -58,3 +58,33 @@ class FilmList {
     return this._films.some(f => f.id === id);
   }
 }
+// Clase User: representa un usuario con sus datos y sus 3 listas
+class User {
+  constructor(nombre, apellidos, direccion, poblacion, codigoPostal, email, username, password) {
+    this._nombre = nombre;
+    this._apellidos = apellidos;
+    this._direccion = direccion;
+    this._poblacion = poblacion;
+    this._codigoPostal = codigoPostal;
+    this._email = email;
+    this._username = username;
+    this._password = password;
+    this._favoritos = new FilmList("Favoritos");
+    this._vistas = new FilmList("Vistas");
+    this._pendientes = new FilmList("Pendientes");
+  }
+
+  get username() { return this._username; }
+  get password() { return this._password; }
+  get favoritos() { return this._favoritos; }
+  get vistas() { return this._vistas; }
+  get pendientes() { return this._pendientes; }
+
+  // Métodos para acceder a listas según nombre
+  getList(nombre) {
+    if (nombre === "Favoritos") return this._favoritos;
+    if (nombre === "Vistas") return this._vistas;
+    if (nombre === "Pendientes") return this._pendientes;
+    return null;
+  }
+}
