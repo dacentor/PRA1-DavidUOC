@@ -33,94 +33,28 @@ class Film {
     set voteCount(value) { this._voteCount = value; }
     set genreIds(value) { this._genreIds = value; }
 }
-// Objeto nombre genero 
-const genre = {
-    1: 'Fantasía',
-    2: 'Drama',
-    3: 'Animación',
-    4: 'Romance',
-    5: 'Comedia',
-    6: 'Aventura'
-}
 
-// En la clase FilmList es donde se gestionan las peliculas
+// Clase FilmList: representa una colección de películas del mismo tipo (favoritas, vistas, etc.)
 class FilmList {
-    constructor() {
-        this.films = [];
+  constructor(nombre) {
+    this._nombre = nombre;
+    this._films = [];
+  }
+
+  get nombre() { return this._nombre; }
+  get films() { return this._films; }
+
+  addFilm(film) {
+    if (!this._films.some(f => f.id === film.id)) {
+      this._films.push(film);
     }
+  }
 
-    // Agrega una película 
-    addFilm = (film) => {
-        this.films.push(film);
-    };
+  removeFilm(id) {
+    this._films = this._films.filter(f => f.id !== id);
+  }
 
-    // Agrega varias peliculas 
-    addMultipleFilms = (...films) => {
-        this.films.push(...films);
-    };
-
-    // Funcion eliminar pelicula
-    removeFilm = (id) => {
-        this.films = this.films.filter(film => film.id === id ? false : true);
-    };
-
-    // Muestra peliculas 
-    showList = () => {
-        this.films.forEach(film => {
-            console.log(`${film.title} (${film.releaseDate}) - Popularidad: ${film.popularity}`);
-        });
-    };
-
-    // Devuelve películas que se encuentren entre dos fechas
-    getFilmsByDateRange = (startDate, endDate) => { 
-        const start = new Date(startDate);
-        const end = new Date(endDate);
-        return this.films.filter(film => {
-            const release = new Date(film.releaseDate);
-            return release >= start && release <= end; 
-        });
-    };
-
-    // Ordenar peliculas
-    sortFilmsByPopularity = () => {
-        this.films.sort((a, b) => b.popularity - a.popularity);
-    };
-
-    // Busca una película 
-    findFilmById = (id, index = 0) => {
-        if (index >= this.films.length) return null; 
-        return this.films[index].id === id
-            ? this.films[index]
-            : this.findFilmById(id, index + 1);
-    };
-
-    // Devuelve el género más común
-    getMostCommonGenre = () => {
-        const genreCount = this.films.reduce((acc, film) => {
-            film.genreIds.forEach(genreId => {
-                acc[genreId] = (acc[genreId] || 0) + 1;
-            });
-            return acc;
-        }, {});
-
-        let mostCommon = null;
-        let maxCount = 0;
-
-        for (const genreId in genreCount) {
-            if (genreCount[genreId] > maxCount) {
-                mostCommon = genreId;
-                maxCount = genreCount[genreId];
-            }
-        }
-
-        return genre[parseInt(mostCommon)];
-    };
-
-    // Muestra las peliculas con una puntuación minima dada
-    getPopularFilmTitles = (minVoteAverage) => {
-        return this.films
-            .filter(film => film.voteAverage >= minVoteAverage)
-            .map(film => film.title);
-    };
+  hasFilm(id) {
+    return this._films.some(f => f.id === id);
+  }
 }
-
