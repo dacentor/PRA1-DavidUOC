@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de usuario</title>
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body>
+  <h1>Registro de nuevo usuario</h1>
+  <form id="formRegistro">
+    <label>Nombre: <input type="text" id="nombre" /></label><br />
+    <label>Apellidos: <input type="text" id="apellidos" /></label><br />
+    <label>Dirección: <input type="text" id="direccion" /></label><br />
+    <label>Población:
+      <select id="poblacion">
+        <option value="">-- Selecciona --</option>
+      </select>
+    </label><br />
+    <label>Código Postal: <input type="text" id="codigoPostal" readonly /></label><br />
+    <label>Email: <input type="text" id="email" /></label><br />
+    <label>Usuario: <input type="text" id="username" /></label><br />
+    <label>Contraseña: <input type="password" id="password" /></label><br />
+
+    <button type="submit">Guardar</button>
+  </form>
+
+  <script src="../js/datos.js"></script> <!-- Poblaciones y códigos -->
+  <script src="../js/clases.js"></script>
+  <script src="../js/registro.js"></script>
+</body>
+</html>
