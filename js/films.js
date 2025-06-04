@@ -108,7 +108,9 @@ document.addEventListener("DOMContentLoaded", () => {
           alt="${peli.title}"
           width="200"
         />
-        <h3>${peli.title}</h3>
+    <a href="detail.html?id=${peli.id}">
+  <img src="${IMAGE_BASE_URL + peli.poster_path}" alt="${peli.title}" width="200" />
+</a>
         <p>Estreno: ${fechaFormateada}</p>
       `
       contenedorPeliculas.appendChild(div)

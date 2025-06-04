@@ -1,26 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formRegistro");
-  const poblacionSelect = document.getElementById("poblacion");
-  const codigoPostalInput = document.getElementById("codigoPostal");
   const emailInput = document.getElementById("email");
 
-  // Rellenar el select de poblaciones desde datos.js
-  for (const [cp, poblacion] of Object.entries(poblaciones)) {
-    const option = document.createElement("option");
-    option.value = poblacion;
-    option.textContent = poblacion;
-    poblacionSelect.appendChild(option);
-  }
-
-  poblacionSelect.addEventListener("change", () => {
-    const poblacion = poblacionSelect.value;
-    for (const [cp, nombre] of Object.entries(poblaciones)) {
-      if (nombre === poblacion) {
-        codigoPostalInput.value = cp;
-        break;
-      }
-    }
-  });
 
   emailInput.addEventListener("input", () => {
     if (emailInput.value.includes("@") && !emailInput.value.includes("@uoc.edu")) {
@@ -33,9 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nombre = document.getElementById("nombre").value.trim();
     const apellidos = document.getElementById("apellidos").value.trim();
-    const direccion = document.getElementById("direccion").value.trim();
-    const poblacion = document.getElementById("poblacion").value;
-    const codigoPostal = document.getElementById("codigoPostal").value;
     const email = document.getElementById("email").value.trim();
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value;
@@ -45,12 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Los campos Nombre, Apellidos, Dirección y Usuario son obligatorios.");
       return;
     }
-
-    if (!poblacion || !codigoPostal) {
-      alert("Debes seleccionar una población válida.");
-      return;
-    }
-
     const emailValido = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
     if (!emailValido) {
       alert("El email no tiene un formato válido.");
