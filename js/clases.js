@@ -60,12 +60,9 @@ class FilmList {
 }
 // Clase User: representa un usuario con sus datos y sus 3 listas
 class User {
-  constructor(nombre, apellidos, direccion, poblacion, codigoPostal, email, username, password) {
+  constructor(nombre, apellidos, email, username, password) {
     this._nombre = nombre;
     this._apellidos = apellidos;
-    this._direccion = direccion;
-    this._poblacion = poblacion;
-    this._codigoPostal = codigoPostal;
     this._email = email;
     this._username = username;
     this._password = password;
@@ -88,3 +85,5 @@ class User {
     return null;
   }
 }
+
+export { Film, FilmList, User };

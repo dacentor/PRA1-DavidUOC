@@ -1,3 +1,166 @@
-.body{
-    background-color: gray;
+html {
+  background-color: rgb(93, 93, 93);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e0dfdf;
+  color: black;
+}
+
+h1,
+label {
+  color: white;
+}
+
+.titleBienvenida {
+    display: flex;
+    justify-content: center;
+    padding-top: 8rem;
+}
+
+.bienvenida {
+    font-size: 6rem;
+}
+
+.logo {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.logo img {
+  max-height: 100px;
+}
+
+.card {
+  margin: auto;
+  margin-top: 2rem;
+  max-width: 300px;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 1rem;
+  padding-inline: 3rem;
+}
+
+.btn-register {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+}
+
+.socials,
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.socials a img,
+.auth-buttons button {
+  height: 50px;
+}
+
+.auth-buttons button {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.auth-buttons button:hover {
+  background-color: #cc0000;
+}
+
+/* Para evitar que crezca más de lo necesario */
+.side {
+  flex-basis: 20%;
+}
+
+/*__________________FiLms__________________*/
+
+.usuario-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.usuario-bar button {
+  background-color: #ff4444;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.usuario-bar button:hover {
+  background-color: #cc0000;
+}
+
+.peliculas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.pelicula-item {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.pelicula-item img {
+  max-width: 100%;
+  border: 5px solid rgb(172, 0, 0);
+  height: auto;
+  border-radius: 4px;
+}
+
+
+#paginacion {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+/*__________________DETAIL_______________*/
+
+.detalle-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: flex-start;
+}
+
+.detalle-container img {
+  width: 300px;
+  border-radius: 8px;
+}
+
+.detalle-container .info {
+  max-width: 600px;
+}
+
+.detalle-container .info h2 {
+  margin-top: 0;
+}
+
+.detalle-container .info p {
+  line-height: 1.6;
 }

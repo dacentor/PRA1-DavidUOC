@@ -2,21 +2,22 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Detalle de la película</title>
+  <title>Detalle de Película | Cine10</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
-  <h1>Detalle de la película</h1>
+  <header>
+    <div class="logo">
+      <img src="../img/logo-cine10.png" alt="CINE10 Logo" />
+    </div>
+  </header>
 
-  <!-- Aquí se cargará la información de la película -->
-  <div id="detallePelicula"></div>
-
-  <!-- Botones de gestión de listas -->
-  <div id="botonesListas">
-    <button id="btnFavoritos">Favoritos</button>
-    <button id="btnVistas">Vistas</button>
-    <button id="btnPendientes">Pendientes</button>
-  </div>
+  <main class="container">
+    <div id="detallePelicula" class="detalle-pelicula">
+      <!-- Se rellena dinámicamente -->
+    </div>
+  </main>
 
   <script type="module" src="../js/detail.js"></script>
 </body>

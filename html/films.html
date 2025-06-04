@@ -1,32 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Películas</title>
-  <link rel="stylesheet" href="../css/styles.css" />
-</head>
-<body>
-  <h1>Películas populares</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Películas populares | Cine10</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
 
-  <!-- Contenedor de filtros por género -->
-  <section id="filtros">
-    <h2>Filtrar por género</h2>
-    <div id="contenedorGeneros">
-      <!-- Aquí se agregarán los checkboxes de cada género -->
+  <body>
+    <header>
+      <div class="side socials">
+        <a href="#"><img src="../img/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="../img/twitter.png" alt="Twitter" /></a>
+        <a href="#"><img src="../img/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="../img/youtube.png" alt="YouTube" /></a>
+      </div>
+
+      <div class="logo">
+        <img src="../img/logo-cine10.png" alt="CINE10 Logo" />
+      </div>
+
+      <div class="side auth-buttons">
+        <button id="btnLogin">Login</button>
+        <button id="btnRegistro">Registro</button>
+      </div>
+    </header>
+
+    <!-- Usuario activo y logout -->
+    <div id="usuarioActivo" class="usuario-bar">
+      <!-- Aquí se cargará dinámicamente el nombre y botón logout -->
     </div>
-  </section>
 
-  <!-- Contenedor principal de películas -->
-  <div id="contenedorPeliculas"></div>
+    <main class="container-films">
+      <h1>Películas populares</h1>
 
-  <!-- Botones de paginación -->
-  <div id="paginacion">
-    <button id="btnAnterior">Anterior</button>
-    <span id="paginaActual">1</span>
-    <button id="btnSiguiente">Siguiente</button>
-  </div>
+      <!-- Filtros por género -->
+      <section id="filtros">
+        <h2>Filtrar por género</h2>
+        <div id="contenedorGeneros">
+          <!-- Se rellenan dinámicamente -->
+        </div>
+      </section>
 
-  <!-- Scripts como módulo ES6 -->
-  <script type="module" src="../js/films.js"></script>
-</body>
+      <!-- Contenedor de películas -->
+      <div id="contenedorPeliculas" class="peliculas-grid"></div>
+
+      <!-- Paginación -->
+      <div id="paginacion">
+        <button id="btnAnterior">Anterior</button>
+        <span id="paginaActual">1</span>
+        <button id="btnSiguiente">Siguiente</button>
+      </div>
+    </main>
+
+    <!-- Script ES6 -->
+    <script type="module" src="../js/films.js"></script>
+  </body>
 </html>
