@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Películas</title>
-  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="../css/estilos.css" />
 </head>
 <body>
   <h1>Películas populares</h1>
+
+  <!-- Contenedor de filtros por género -->
+  <section id="filtros">
+    <h2>Filtrar por género</h2>
+    <div id="contenedorGeneros">
+      <!-- Aquí se agregarán los checkboxes de cada género -->
+    </div>
+  </section>
+
+  <!-- Contenedor principal de películas -->
   <div id="contenedorPeliculas"></div>
 
-  <script src="../js/config.js"></script>
-  <script src="../js/clases.js"></script>
-  <script src="../js/films.js"></script>
+  <!-- Botones de paginación -->
+  <div id="paginacion">
+    <button id="btnAnterior">Anterior</button>
+    <span id="paginaActual">1</span>
+    <button id="btnSiguiente">Siguiente</button>
+  </div>
+
+  <!-- Scripts como módulo ES6 -->
+  <script type="module" src="../js/films.js"></script>
 </body>
 </html>
