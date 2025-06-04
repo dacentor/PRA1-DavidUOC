@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de usuario</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+   <header>
+      <div class="side socials">
+        <a href="#"><img src="../img/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="../img/twitter.png" alt="Twitter" /></a>
+        <a href="#"><img src="../img/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="../img/youtube.png" alt="YouTube" /></a>
+      </div>
+
+      <div class="logo">
+        <img src="../img/logo-cine10.png" alt="CINE10 Logo" />
+      </div>
+
+      <div class="side auth-buttons">
+      </div>
+    </header>
+
+  <div class="card">
+    <h1>Registro de nuevo usuario</h1>
+    <form id="formRegistro">
+      <label>Nombre: <input type="text" id="nombre" /></label><br />
+      <label>Apellidos: <input type="text" id="apellidos" /></label><br />
+      <label>Email: <input type="text" id="email" /></label><br />
+      <label>Usuario: <input type="text" id="username" /></label><br />
+      <label>Contraseña: <input type="password" id="password" /></label><br />
+      <button class="btn-register" type="submit">Guardar</button>
+    </form>
+  </div>
+
+  <script src="../js/datos.js"></script> <!-- Poblaciones y códigos -->
+  <script src="../js/clases.js"></script>
+  <!-- Al final del body -->
+<script type="module" src="../js/registro.js"></script>
+
+</body>
+</html>
