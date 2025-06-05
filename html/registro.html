@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Se especifica la codificación para soportar tildes y caracteres especiales -->
   <meta charset="UTF-8" />
+
+  <!-- Hace que la página se adapte correctamente a dispositivos móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Título que aparece en la pestaña del navegador -->
   <title>Registro de usuario</title>
+
+  <!-- Enlace a la hoja de estilos principal -->
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
+
 <body>
-   <header>
-      <div class="side socials">
-        <a href="#"><img src="../img/facebook.png" alt="Facebook" /></a>
-        <a href="#"><img src="../img/twitter.png" alt="Twitter" /></a>
-        <a href="#"><img src="../img/instagram.png" alt="Instagram" /></a>
-        <a href="#"><img src="../img/youtube.png" alt="YouTube" /></a>
-      </div>
+  <!-- Cabecera con logo y enlaces a redes sociales -->
+  <header>
+    <div class="side socials">
+      <!-- Enlaces a redes sociales con sus respectivos iconos -->
+      <a href="#"><img src="../img/facebook.png" alt="Facebook" /></a>
+      <a href="#"><img src="../img/twitter.png" alt="Twitter" /></a>
+      <a href="#"><img src="../img/instagram.png" alt="Instagram" /></a>
+      <a href="#"><img src="../img/youtube.png" alt="YouTube" /></a>
+    </div>
 
-      <div class="logo">
-        <img src="../img/logo-cine10.png" alt="CINE10 Logo" />
-      </div>
+    <!-- Logo centrado -->
+    <div class="logo">
+      <img src="../img/logo-cine10.png" alt="CINE10 Logo" />
+    </div>
 
-      <div class="side auth-buttons">
-      </div>
-    </header>
+    <!-- Contenedor para futuros botones de login/logout (aquí está vacío) -->
+    <div class="side auth-buttons">
+    </div>
+  </header>
 
+  <!-- Contenedor del formulario de registro -->
   <div class="card">
     <h1>Registro de nuevo usuario</h1>
+
+    <!-- Formulario para crear un nuevo usuario -->
     <form id="formRegistro">
+      <!-- Campos obligatorios para el registro -->
       <label>Nombre: <input type="text" id="nombre" /></label><br />
       <label>Apellidos: <input type="text" id="apellidos" /></label><br />
       <label>Email: <input type="text" id="email" /></label><br />
       <label>Usuario: <input type="text" id="username" /></label><br />
       <label>Contraseña: <input type="password" id="password" /></label><br />
+
+      <!-- Botón para guardar el nuevo usuario -->
       <button class="btn-register" type="submit">Guardar</button>
     </form>
   </div>
 
-  <script src="../js/datos.js"></script> <!-- Poblaciones y códigos -->
-  <script src="../js/clases.js"></script>
-  <!-- Al final del body -->
-<script type="module" src="../js/registro.js"></script>
+  <!-- Script con datos de población y códigos postales (aunque aquí no se usan) -->
+  <script src="../js/datos.js"></script>
 
+  <!-- Script con las clases JavaScript necesarias para la app -->
+  <script src="../js/clases.js"></script>
+
+  <!-- Script principal que contiene la lógica de validación y registro de usuario -->
+  <script type="module" src="../js/registro.js"></script>
 </body>
 </html>

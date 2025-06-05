@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Se define la codificación del documento -->
     <meta charset="UTF-8" />
+
+    <!-- Se adapta el diseño al tamaño del dispositivo para que sea responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título de la pestaña del navegador -->
     <title>Registro de usuario</title>
+
+    <!-- Enlace a la hoja de estilos principal -->
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
+
   <body>
+    <!-- Cabecera con enlaces a redes sociales y logo -->
     <header>
       <div class="side socials">
+        <!-- Enlaces a redes sociales con sus respectivos iconos -->
         <a href="#"><img src="../img/facebook.png" alt="Facebook" /></a>
         <a href="#"><img src="../img/twitter.png" alt="Twitter" /></a>
         <a href="#"><img src="../img/instagram.png" alt="Instagram" /></a>
         <a href="#"><img src="../img/youtube.png" alt="YouTube" /></a>
       </div>
 
+      <!-- Logo principal del sitio -->
       <div class="logo">
         <img src="../img/logo-cine10.png" alt="CINE10 Logo" />
       </div>
 
+      <!-- Sección reservada para botones de autenticación (vacía en esta página) -->
       <div class="side auth-buttons"></div>
     </header>
+
+    <!-- Contenedor del formulario de login -->
     <div class="card">
       <h1>Iniciar sesión</h1>
+
+      <!-- Formulario para acceder con usuario y contraseña -->
       <form id="formLogin">
+        <!-- Campo para escribir el nombre de usuario -->
         <label>Usuario: <input type="text" id="username" /></label><br />
+
+        <!-- Campo para escribir la contraseña (oculta) -->
         <label>Contraseña: <input type="password" id="password" /></label><br />
+
+        <!-- Botón para enviar los datos del formulario -->
         <button type="submit">Aceptar</button>
+
+        <!-- Botón para ir a la página de registro si no tiene cuenta -->
         <button class="btn-register" type="button" id="btnRegistro">Nuevo usuario</button>
       </form>
     </div>
+
+    <!-- Script que contiene la lógica del login, cargado al final para que no bloquee el renderizado -->
     <script src="../js/login.js" defer></script>
   </body>
 </html>
