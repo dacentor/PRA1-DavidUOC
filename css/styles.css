@@ -1,13 +1,106 @@
-html {
-  background-color: rgb(93, 93, 93);
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #a6b3c1;
+  text-align: center;
 }
 
+html {
+  background-color: #a6b3c1;
+}
+
+/* Estilos del menú superior obligatorio */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(3, 37, 65);
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar h1 {
+  color: #e9e4e4;
+}
+
+.navbar-left h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.navbar-left h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: #e9e4e4;
+}
+
+.navbar-right {
+  list-style: none;
+  margin: 0;
+  padding: 0 20px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right li {
+  margin: 0 15px;
+}
+
+.navbar-right li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar-right li a:hover {
+  color: #ffd700;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #838181;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  color: #ffd700;
+}
+
+/* Estilos propios */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e0dfdf;
-  color: black;
+  background-color: rgba(3, 37, 65);
+  color: white;
 }
 
 h1,
@@ -16,13 +109,13 @@ label {
 }
 
 .titleBienvenida {
-    display: flex;
-    justify-content: center;
-    padding-top: 8rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 8rem;
 }
 
 .bienvenida {
-    font-size: 6rem;
+  font-size: 6rem;
 }
 
 .logo {
@@ -78,13 +171,11 @@ form label {
   background-color: #cc0000;
 }
 
-/* Para evitar que crezca más de lo necesario */
 .side {
   flex-basis: 20%;
 }
 
-/*__________________FiLms__________________*/
-
+/* Films */
 .usuario-bar {
   display: flex;
   justify-content: space-between;
@@ -130,7 +221,6 @@ form label {
   border-radius: 4px;
 }
 
-
 #paginacion {
   display: flex;
   justify-content: center;
@@ -138,8 +228,7 @@ form label {
   margin: 2rem 0;
 }
 
-/*__________________DETAIL_______________*/
-
+/* Detail */
 .detalle-container {
   display: flex;
   flex-wrap: wrap;

@@ -34,7 +34,7 @@ class Film {
     set genreIds(value) { this._genreIds = value; }
 }
 
-// Clase FilmList: representa una colección de películas del mismo tipo (favoritas, vistas, etc.)
+// Clase FilmList, colección de peliculas
 class FilmList {
   constructor(nombre) {
     this._nombre = nombre;
@@ -58,7 +58,7 @@ class FilmList {
     return this._films.some(f => f.id === id);
   }
 }
-// Clase User: representa un usuario con sus datos y sus 3 listas
+// Clase User, usuario con sus datos y sus 3 listas
 class User {
   constructor(nombre, apellidos, email, username, password) {
     this._nombre = nombre;
@@ -77,7 +77,7 @@ class User {
   get vistas() { return this._vistas; }
   get pendientes() { return this._pendientes; }
 
-  // Métodos para acceder a listas según nombre
+  // Metodos para acceder a listas según nombre
   getList(nombre) {
     if (nombre === "Favoritos") return this._favoritos;
     if (nombre === "Vistas") return this._vistas;
